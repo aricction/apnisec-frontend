@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* Color Variables */
+:root {
+  --background: #0d0a0a;
+  --foreground: #ece7e7;
+}
+
+
+/* Baunk Font */
+@font-face {
+  font-family: 'Baunk';
+  src: url('/fonts/Baunk.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lissen';
+  src: url('/fonts/Lissen.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Theme Variables */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-baunk: 'Baunk', sans-serif;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #fffefe;
+    --foreground: #040404;
+  }
+}
+
+/* Body Styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Utility Class for Baunk */
+.font-baunk {
+  font-family: var(--font-baunk);
+}
