@@ -11,12 +11,14 @@ export default function Login() {
         <form className="flex flex-col gap-4">
           <input
             type="email"
+            name="email"
             placeholder="Email"
             className="p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
           />
 
           <input
             type="password"
+            name="password"
             placeholder="Password"
             className="p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
           />
