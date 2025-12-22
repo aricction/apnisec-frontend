@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Navbar from "./components/Navbar";
+import { FeatureCard } from "./components/FeatureCard";
 
 export default function Home() {
   return (
@@ -91,6 +92,10 @@ export default function Home() {
              <br />
              Cybersecurity Solutions
           </h1>
+
+          <div className="mt-12">
+            <FeatureCard />
+          </div>
         </section>
       </div>
     </>

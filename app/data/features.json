@@ -1,0 +1,64 @@
+[
+    {
+        "id": 0,
+        "title": "Dark Eye Watcher",
+        "color": "#183fcc",
+        "list": [
+               "Monitoring The Dark Web For Compromised Data.",
+                "Tracking Data Breaches 24x7",
+                "Threat Intelligence Platform",
+                "Data Loss Prevention (DLP)",
+                "Brand Protection Services"
+        ]
+    },
+    {  
+        "id": 1,
+        "title": "Red Team Assessment",
+         "color": "#f69138",
+        "list": [
+            
+            "social engineering simulation campaigns & Evalution ",
+            "Assess Vulnerabilities In System And Processes",
+            "On-Site Network Firewall And Process Audits",
+            "Cloud Attack Emulation"
+        ]
+    },
+
+    {
+        "id": 2,
+        "title": "Cloud Watcher",
+        "color": "#2fc4a1",
+        "list": [
+            "Asset Monitoring",
+            "Cloud Security Posture Management",
+            "MicroServices Security",
+            "Cloud Attack Emulation"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "End-to-End VAPT",
+       "color": "#FF3D81 ",
+        "list": [
+            "Web,API & Mobile Application Security",
+            "Secure Code Review",
+            "Vulnerability Assessment & Penetration Testing",
+            "Network Security"
+        ]
+    },
+
+    {
+        "id": 4,
+        "title":"Virtual CISO",
+        "color": "#B84DFF",
+        "list": [
+             "Continuous Vulnerability Scanning & Asset Monitoring",
+             "Auditing Weekly Feature Releases",
+             "DevSecOps - Shift Left Culture",
+             "Zero Trust Security Model",
+             "Threat Modelling",
+             "Social Engineering Simulations & Awareness Training",
+             "Information Security Policy & Cyber Risk Maturity Plan"
+        ]
+    }
+]
