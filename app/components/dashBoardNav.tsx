@@ -2,6 +2,7 @@
 
 import React, { FC, useState } from "react";
 import Link from "next/link";
+import { useUserStore } from "../store/user-store";
 
 interface NavbarProps {
   showAuthButtons?: boolean;
@@ -10,6 +11,7 @@ interface NavbarProps {
 const DashBoardNavbar: FC<NavbarProps> = () => {
   const [open, setOpen] = useState(false);
 
+const user = useUserStore((state) => state.user)
   return (
     <nav className=" text-black shadow-md px-6 py-4 relative">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
@@ -22,7 +24,7 @@ const DashBoardNavbar: FC<NavbarProps> = () => {
         <div className="rounded-full p-4 w-[40px] h-[40px] bg-yellow-400">
             <span></span>
         </div>
-        <p>Username</p>
+        <p>{user?.user.name || 'user'}</p>
       </div>
         </div>
 

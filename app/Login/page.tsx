@@ -1,18 +1,16 @@
 "use client";
-import React from "react";
-import { ChangeEvent, FormEvent } from "react";
-
+import React, { ChangeEvent, FormEvent } from "react";
 import Link from "next/link";
-import { LoginRequest } from "../types/authType";
 import { useRouter } from "next/navigation";
 import { useUserStore } from "../store/user-store";
 import { getUserByLogin } from "../lib/api/auth-api";
+import { LoginRequest } from "../types/authType";
+
 export default function Login() {
   const [form, setForm] = React.useState<LoginRequest>({
     email: "",
     password: "",
   });
-
   const [message, setMessage] = React.useState("");
   const setUser = useUserStore((state) => state.setUser);
   const router = useRouter();
@@ -28,28 +26,29 @@ export default function Login() {
       const response = await getUserByLogin(form);
       setMessage(response.message);
 
-      if (response.status === "success" && response.data?.user) {
-        setUser({ user: response.data.user });
+      if (response.status === "success" && response.data) {
+        // Save user + token in store
+        setUser(response.data);
+
+        // Redirect to dashboard
         router.push("/Dashboard");
       }
     } catch (error: any) {
-      setMessage(error.response?.data?.message || "error");
+      setMessage(error.response?.data?.message || "Login failed");
     }
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
       <div
-        className="bg-[#070B1F] p-8 rounded-2xl shadow-2xl w-full max-w-md "
+        className="bg-[#070B1F] p-8 rounded-2xl shadow-2xl w-full max-w-md"
         style={{ fontFamily: "Lissen" }}
       >
         <h2 className="text-3xl font-semibold text-white mb-6 text-center">
           Login
         </h2>
 
-        <form 
-        onSubmit={handleSubmit}
-        className="flex flex-col gap-4">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
             type="email"
             name="email"
@@ -57,7 +56,6 @@ export default function Login() {
             onChange={handleChange}
             className="p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
           />
-
           <input
             type="password"
             name="password"
@@ -73,6 +71,8 @@ export default function Login() {
             Login
           </button>
         </form>
+
+        {message && <p className="text-red-500 text-center mt-2">{message}</p>}
 
         <p className="text-gray-400 text-sm mt-4 text-center">
           Don’t have an account?{" "}

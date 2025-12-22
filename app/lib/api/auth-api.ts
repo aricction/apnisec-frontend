@@ -6,7 +6,7 @@ export const createUserByRegister = async (data: RegisterRequest): Promise<AuthR
     return response.data;
 }
 
-export const getUserByLogin = async(data: LoginRequest): Promise<AuthResponse> => {
-    const response = await API.post<AuthResponse>("/api/auth/login", data);
-    return response.data;
-}
+export const getUserByLogin = async (data: LoginRequest) => {
+  const response = await API.post("/api/auth/login", data);
+  return response.data;
+};
