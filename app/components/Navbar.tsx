@@ -13,7 +13,6 @@ const Navbar: FC<NavbarProps> = () => {
   return (
     <nav className="bg-black text-white shadow-md px-6 py-4 relative">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
-        
         {/* Logo */}
         <div className="text-xl font-bold">Logo</div>
 
@@ -46,14 +45,13 @@ const Navbar: FC<NavbarProps> = () => {
           <button className="px-4 py-2 bg-white rounded-lg text-black hover:bg-gray-200 transition">
             Secure Now
           </button>
-          <p className="text-[15px] cursor-pointer">Login</p>
+          <p className="text-[15px] cursor-pointer text-orange-500 hover:underline">
+            <Link href="/Login">Login</Link>
+          </p>
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden"
-          onClick={() => setOpen(!open)}
-        >
+        <button className="lg:hidden" onClick={() => setOpen(!open)}>
           <svg
             className="w-6 h-6"
             fill="none"
@@ -64,11 +62,7 @@ const Navbar: FC<NavbarProps> = () => {
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              d={
-                open
-                  ? "M6 18L18 6M6 6l12 12"
-                  : "M4 6h16M4 12h16M4 18h16"
-              }
+              d={open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
             />
           </svg>
         </button>
@@ -106,7 +100,9 @@ const Navbar: FC<NavbarProps> = () => {
               Secure Now
             </button>
 
-            <p className="text-[15px] cursor-pointer">Login</p>
+            <p className="text-[15px] cursor-pointer text-orange-500 hover:underline">
+              <Link href="/Login">Login</Link>
+            </p>
           </ul>
         </div>
       )}

@@ -2,6 +2,7 @@
     {
         "id": 0,
         "title": "Dark Eye Watcher",
+        "icon": "/asset/zoom-lens.png",
         "color": "#183fcc",
         "list": [
                "Monitoring The Dark Web For Compromised Data.",
@@ -14,6 +15,7 @@
     {  
         "id": 1,
         "title": "Red Team Assessment",
+           "icon": "/asset/swords.png",
          "color": "#f69138",
         "list": [
             
@@ -27,6 +29,7 @@
     {
         "id": 2,
         "title": "Cloud Watcher",
+           "icon": "/asset/cloud.png",
         "color": "#2fc4a1",
         "list": [
             "Asset Monitoring",
@@ -38,6 +41,7 @@
     {
         "id": 3,
         "title": "End-to-End VAPT",
+           "icon": "/asset/shield.png",
        "color": "#FF3D81 ",
         "list": [
             "Web,API & Mobile Application Security",
@@ -50,6 +54,7 @@
     {
         "id": 4,
         "title":"Virtual CISO",
+           "icon": "/asset/briefcase.png",
         "color": "#B84DFF",
         "list": [
              "Continuous Vulnerability Scanning & Asset Monitoring",

@@ -10,10 +10,13 @@ export function FeatureCard() {
           className="relative max-w-sm w-full pt-14 overflow-visible"
         >
           {/* CARD GLOW */}
-          <div className="pointer-events-none absolute inset-x-6 top-0 h-28  blur-3xl rounded-full"  style={{
+          <div
+            className="pointer-events-none absolute inset-x-6 top-0 h-28  blur-3xl rounded-full"
+            style={{
               backgroundColor: card.color,
               opacity: 0.35,
-            }}></div>
+            }}
+          ></div>
 
           {/* CARD BORDER */}
           <div
@@ -22,10 +25,8 @@ export function FeatureCard() {
               background: `linear-gradient(to bottom, ${card.color}, transparent)`,
             }}
           >
-
             {/* CARD BODY */}
             <div className="relative rounded-2xl bg-[#070B1F] text-white px-6 pt-16 pb-8 overflow-visible">
-
               {/* ICON */}
               <div className="absolute -top-10 left-1/2 -translate-x-1/2 z-30">
                 <div
@@ -36,11 +37,12 @@ export function FeatureCard() {
                   }}
                 />
 
-               
-
-                <div className={`relative  rounded-full p-4 shadow-xl`} style={{backgroundColor: card.color}}>
+                <div
+                  className={`relative  rounded-full p-4 shadow-xl`}
+                  style={{ backgroundColor: card.color }}
+                >
                   <Image
-                    src="/asset/zoom-lens.png"
+                    src={card.icon}
                     alt="zoom lens"
                     width={44}
                     height={44}
@@ -65,30 +67,27 @@ export function FeatureCard() {
                     <p key={i}>{feature}</p>
                   ))}
                 </div>
-<div
-  className="inline-block rounded-full transition-all duration-300 hover:scale-105"
-  style={{
-    boxShadow: `
+                <div
+                  className="inline-block rounded-full transition-all duration-300 hover:scale-105"
+                  style={{
+                    boxShadow: `
       0 0 14px ${card.color}90,
       0 0 36px ${card.color}60
     `,
-  }}
->
-  <button
-    className="p-3 px-6 rounded-full text-white font-medium transition-all duration-300 hover:brightness-110"
-    style={{
-      backgroundColor: card.color,
-      boxShadow: `inset 0 0 12px ${card.color}80`,
-    }}
-  >
-    Learn More
-  </button>
-</div>
-
-
-
+                  }}
+                >
+                  <button
+                    className="p-3 px-6 rounded-full text-sm text-white font-medium transition-all duration-300 hover:brightness-110"
+                    style={{
+                        fontFamily: "Lissen",
+                      backgroundColor: card.color,
+                      boxShadow: `inset 0 0 12px ${card.color}80`,
+                    }}
+                  >
+                    Learn More
+                  </button>
+                </div>
               </div>
-
             </div>
           </div>
         </div>
