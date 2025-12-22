@@ -2,6 +2,7 @@
 import React from "react";
 import IssueForm from "../components/issueForm";
 import IssueCard from "../components/issueCard";
+import DashBoardNavbar from "../components/dashBoardNav";
 interface Issue {
   id: number;
   issueType: string;
@@ -29,6 +30,8 @@ export default function Dashboard() {
   };
 
   return (
+    <>
+    <DashBoardNavbar />
     <div className="" style={{ fontFamily: "Lissen" }}>
       <section className="min-h-screen w-full flex flex-col px-4 sm:px-6 lg:px-20 py-10 ">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
@@ -37,7 +40,7 @@ export default function Dashboard() {
           <button
             onClick={() => setIsOpen(true)}
             className="px-5 py-3 rounded-md text-white bg-[#FF3D81]  transition-colors duration-300 font-medium"
-          >
+            >
             Create Issue
           </button>
         </div>
@@ -52,22 +55,23 @@ export default function Dashboard() {
 
         <div className="flex flex-wrap gap-4 mt-4">
           {data.length > 0 ?  (
-            data.map((issue) => (
-            <IssueCard
-              key={issue.id}
-              issueType={issue.issueType}
-              title={issue.title}
-              description={issue.description}
-              priority={issue.priority}
-              status={issue.status}
-            />
-          ))): (
-   <div className="bg-gray-800 rounded-2xl p-6 shadow-lg w-full">
+              data.map((issue) => (
+                  <IssueCard
+                  key={issue.id}
+                  issueType={issue.issueType}
+                  title={issue.title}
+                  description={issue.description}
+                  priority={issue.priority}
+                  status={issue.status}
+                  />
+                ))): (
+                    <div className="bg-gray-800 rounded-2xl p-6 shadow-lg w-full">
           <p className="text-gray-300">No issues found.</p>
         </div>
           )}
         </div>
       </section>
     </div>
+          </>
   );
 }

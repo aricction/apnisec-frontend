@@ -28,9 +28,9 @@ export default function Register() {
       const response = await createUserByRegister(form);
       setMessage(response.message);
        
-      if(response.status === "SUCCESS" && response.data){
+      if(response.status === "success" && response.data){
         setUser(response.data);
-        router.push("/");
+        router.push("/Dashboard");
       }
     } catch (error: any) {
       setMessage(error.response?.data?.message || "error");
