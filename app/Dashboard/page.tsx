@@ -7,9 +7,10 @@ import { useRouter } from "next/navigation";
 import { logoutUser } from "../lib/api/auth-api";
 import { useUserStore } from "../store/user-store";
 import { useIssueStore } from "../store/issue-store";
-import { createIssue , updateIssue } from "../lib/api/issues-api"; 
+import { createIssue , updateIssue , deleteIssue} from "../lib/api/issues-api"; 
 import { Issue } from "../types/issueType";
 import { CreateIssuePayload } from "../types/issueType";
+
 
 export default function Dashboard() {
   const [isopen, setIsOpen] = React.useState(false);
@@ -74,6 +75,21 @@ const handleEdit = async( id: string, payload: Partial<CreateIssuePayload>) => {
   }
 }
 
+const handleDelete = async (id: string)=> {
+  try {
+    const result = await deleteIssue(id);
+    if(result.status === "success") {
+      
+      useIssueStore.getState().deleteIssue(id);
+    } else {
+      throw new Error(result.message || "failed to delete");
+    }
+  } catch (error: any) {
+    console.error("Failed to delete");
+    
+  }
+
+}
 
   const handleLogout = async () => {
     try {
@@ -120,6 +136,7 @@ const handleEdit = async( id: string, payload: Partial<CreateIssuePayload>) => {
             onSubmit={handleSubmit}
             isEditing={edit !== null}
             initialData = {edit}
+            
           />
 
           <div className="flex flex-wrap gap-4 mt-4">
@@ -129,6 +146,7 @@ const handleEdit = async( id: string, payload: Partial<CreateIssuePayload>) => {
                   key={issueItem.id}
                   issue={issueItem}
                   onEdit={(issue)=> {setEdit(issue); setIsOpen(true);}}
+                  onDelete = {(issue)=> {handleDelete(issue.id)}}
                 />
               ))
             ) : (

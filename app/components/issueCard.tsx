@@ -1,13 +1,14 @@
-import { MdEdit } from "react-icons/md";
+import { MdDelete, MdEdit } from "react-icons/md";
 import { Issue } from "../types/issueType";
 
 interface IssueCardProps {
     issue: Issue;
     onEdit: (issue: Issue ) =>void;
+    onDelete: (issue: Issue)=> void;
   
 }
 
-export default function IssueCard({issue , onEdit}: IssueCardProps){
+export default function IssueCard({issue , onEdit, onDelete}: IssueCardProps){
     return (
        <div className="bg-gray-800 text-white rounded-xl shadow-md p-4 w-full  lg:w-[300px] sm:w-[100%] h-full">
         <div className=" mb-5 items-center">
@@ -17,11 +18,19 @@ export default function IssueCard({issue , onEdit}: IssueCardProps){
           <div>
             <p>{issue.type}</p>
           </div>
+
+
+         <div className="space-x-2">
+
+          <button onClick={()=> onDelete(issue)}>
+            <MdDelete/>
+          </button>
            
            <button onClick={()=> onEdit(issue)}>
             <MdEdit />
            </button>
           </div>
+         </div>
 
           <div className="mt-2">
             <p className="text-sm text-gray-400">{issue.title}</p>

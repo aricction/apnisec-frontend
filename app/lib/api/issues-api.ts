@@ -10,3 +10,9 @@ export const updateIssue = async(id: string, data: Partial<CreateIssuePayload>) 
   const response = await API.put(`/api/issues/${id}`, data);
   return response.data;
 }
+
+
+export const deleteIssue = async (id: string) => {
+  const response = await API.delete(`/api/issues/${id}`);
+  return response.data;
+};
