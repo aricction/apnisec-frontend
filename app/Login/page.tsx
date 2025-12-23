@@ -30,6 +30,9 @@ export default function Login() {
         // Save user + token in store
         setUser(response.data);
 
+        // Set token in cookie for middleware
+        document.cookie = `token=${response.data.token}; path=/; max-age=604800`; // 7 days
+
         // Redirect to dashboard
         router.push("/Dashboard");
       }

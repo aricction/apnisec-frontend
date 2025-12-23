@@ -1,27 +1,30 @@
 "use client";
 import React from "react";
+import { Issue } from "../types/issueType";
 
 interface IssueFormProps {
   open: boolean;
   onClose: () => void;
   onSubmit: (data: {
-    issueType: string;
     title: string;
     description: string;
+    type: string;
     priority: string;
     status: string;
   }) => void;
+  isEditing: boolean;
+  initialData?: Issue | null;
 }
 
-export default function IssueForm({ open, onClose, onSubmit }: IssueFormProps) {
+export default function IssueForm({ open, onClose, onSubmit , isEditing, initialData}: IssueFormProps) {
   if (!open) return null;
 
   const [formData, setFormData] = React.useState({
-    issueType: "Cloud Security",
-    title: "",
-    description: "",
-    priority: "Low",
-    status: "Open",
+    title: initialData?.title || "",
+    description: initialData?.description|| "",
+    type: initialData?.type || "Cloud Security",
+    priority: initialData?.priority || "Low",
+    status: initialData?.status || "Open",
   });
 
   const handleChange = (
@@ -41,9 +44,10 @@ const handleInput = (e: React.FormEvent) => {
   onSubmit(formData);
 
   setFormData({
-    issueType: "Cloud Security",
+
     title: "",
     description: "",
+    type: "Cloud Security",
     priority: "Low",
     status: "Open",
   });
@@ -62,14 +66,14 @@ const handleInput = (e: React.FormEvent) => {
           ✕
         </button>
 
-        <h2 className="text-2xl font-semibold text-white mb-6">Create Issue</h2>
+        <h2 className="text-2xl font-semibold text-white mb-6">{isEditing? "Update Issue" : "Create Issue"}</h2>
 
         <form onSubmit={handleInput} className="flex flex-col gap-4">
           <div className="flex flex-col">
             <label className="text-gray-300 mb-1">Issue Type</label>
             <select
-              name="issueType"
-              value={formData.issueType}
+              name="type"
+              value={formData.type}
               onChange={handleChange}
               className="p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-[#FF3D81]"
             >
