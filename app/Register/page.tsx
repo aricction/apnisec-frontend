@@ -46,7 +46,7 @@ export default function Register() {
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
       <div
         className="bg-[#070B1F] p-8 rounded-2xl shadow-2xl w-full max-w-md"
-        style={{ fontFamily: "Lissen" }}
+        style={{ fontFamily: "lissen" }}
       >
         <h2 className="text-3xl font-semibold text-white mb-6 text-center">
           Create Account
