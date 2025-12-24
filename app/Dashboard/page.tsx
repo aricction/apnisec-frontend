@@ -114,7 +114,7 @@ const handleDelete = async (id: string)=> {
   return (
     <>
       <DashBoardNavbar />
-      <div className="" style={{ fontFamily: "lissen" }}>
+      <div className="" style={{ fontFamily: "var(--font-lissen), Arial, sans-serif" }}>
         <section className="min-h-screen w-full flex flex-col px-4 sm:px-6 lg:px-20 py-10 ">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
             <h1 className="text2xl font-semibold">Welcome {user?.user.name}</h1>

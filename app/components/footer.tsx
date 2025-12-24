@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer
       className="w-full bg-[#3C3C3C] py-16 px-4 text-white"
-      style={{ fontFamily: "lissen" }}
+      style={{ fontFamily: "var(--font-lissen), Arial, sans-serif" }}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Brand Section */}

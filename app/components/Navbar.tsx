@@ -20,7 +20,7 @@ const Navbar: FC<NavbarProps> = () => {
 
         {/* Desktop Menu */}
         <ul
-          style={{ fontFamily: "Lissen" }}
+          style={{ fontFamily: "var(--font-lissen), Arial, sans-serif" }}
           className="hidden lg:flex flex-1 justify-center items-center space-x-12"
         >
           {[
