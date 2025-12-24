@@ -10,7 +10,7 @@ export default function Footer() {
       className="w-full bg-[#3C3C3C] py-16 px-4 text-white"
       style={{ fontFamily: "lissen" }}
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Brand Section */}
         <div className="space-y-4">
           <Image src="/asset/logo.svg" alt="logo" width={200} height={200} />
