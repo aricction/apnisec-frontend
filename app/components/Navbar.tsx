@@ -1,8 +1,8 @@
 "use client";
-
 import React, { FC, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { GiHamburgerMenu } from "react-icons/gi";
 interface NavbarProps {
   showAuthButtons?: boolean;
 }
@@ -54,19 +54,7 @@ const Navbar: FC<NavbarProps> = () => {
 
         {/* Mobile Menu Button */}
         <button className="lg:hidden" onClick={() => setOpen(!open)}>
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d={open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-            />
-          </svg>
+       <GiHamburgerMenu/>
         </button>
       </div>
 
