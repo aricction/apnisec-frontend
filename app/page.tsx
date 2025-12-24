@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import { FeatureCard } from "./components/FeatureCard";
-
+import Footer from "./components/footer";
 export default function Home() {
   return (
     <>
@@ -11,7 +11,6 @@ export default function Home() {
         {/* HERO SECTION */}
         <section className="min-h-screen flex items-center px-4 sm:px-6 lg:px-20 relative">
           
-          {/* LEFT DECORATIVE IMAGE (desktop only) */}
           <div className="absolute inset-y-0 left-0 z-0 hidden lg:block pointer-events-none">
             <div className="relative h-full w-[280px]">
               <Image
@@ -26,7 +25,6 @@ export default function Home() {
 
           <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
             
-            {/* TEXT CONTENT */}
            <div className="flex flex-col items-start justify-center gap-6 z-10">
               <h1
                 style={{ fontFamily: "Baunk" }}
@@ -69,7 +67,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* RIGHT IMAGE (desktop only) */}
+    
             <div className="relative hidden lg:block w-full aspect-[4/5]">
               <Image
                 src="/asset/bg.png"
@@ -82,7 +80,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* NEXT SECTION */}
+
         <section className="py-24 px-4 sm:px-6 lg:px-20">
           <h1
             style={{ fontFamily: "Baunk" }}
@@ -98,6 +96,8 @@ export default function Home() {
           </div>
         </section>
       </div>
+
+      <Footer/>
     </>
   );
 }

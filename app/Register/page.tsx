@@ -29,8 +29,12 @@ export default function Register() {
       setMessage(response.message);
        
       if(response.status === "success" && response.data){
+        
         setUser(response.data);
+         document.cookie = `token=${response.data.user}; path=/; max-age=604800`; // 7 days
+       
         router.push("/Dashboard");
+   
       }
     } catch (error: any) {
       setMessage(error.response?.data?.message || "error");

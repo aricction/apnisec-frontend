@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import IssueForm from "../components/issueForm";
 import IssueCard from "../components/issueCard";
 import DashBoardNavbar from "../components/dashBoardNav";
@@ -17,12 +17,19 @@ export default function Dashboard() {
   const [input, setInput] = React.useState({ title: "", description: "" });
   const router = useRouter();
   const logout = useUserStore((state)=> state.logout);
-  const user = useUserStore((state) => state.user);
   const issue = useIssueStore((state)=> state.issues);
   const [edit, setEdit] = React.useState<Issue | null>(null);
+  const [hydrated, setHydrated] = useState(false);
+  const user = useUserStore((state) => state.user);
   // protected route handled by middleware
 
+useEffect(() => {
+  setHydrated(true);
+}, []);
 
+if (!hydrated) {
+  return null; // or a spinner
+}
 
 const handleSubmit = async (payload: CreateIssuePayload) => {
  //if edit then choose edit issue or else create issue

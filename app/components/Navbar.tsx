@@ -2,7 +2,7 @@
 
 import React, { FC, useState } from "react";
 import Link from "next/link";
-
+import Image from "next/image";
 interface NavbarProps {
   showAuthButtons?: boolean;
 }
@@ -14,7 +14,9 @@ const Navbar: FC<NavbarProps> = () => {
     <nav className="bg-black text-white shadow-md px-6 py-4 relative">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Logo */}
-        <div className="text-xl font-bold">Logo</div>
+        <div className="text-xl font-bold">
+          <Image src="/asset/logo.svg" alt="logo" width={100} height={50} />
+        </div>
 
         {/* Desktop Menu */}
         <ul
@@ -32,7 +34,7 @@ const Navbar: FC<NavbarProps> = () => {
           ].map((item) => (
             <li key={item}>
               <Link href="#">
-                <span className="text-[14px] font-medium hover:text-indigo-400 transition">
+                <span className="text-[14px] font-medium hover:text-green-400 transition">
                   {item}
                 </span>
               </Link>
